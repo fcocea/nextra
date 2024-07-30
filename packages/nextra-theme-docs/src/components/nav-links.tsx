@@ -26,6 +26,9 @@ export const NavLinks = ({
   const nav = config.navigation
   const navigation: Exclude<DocsThemeConfig['navigation'], boolean> =
     typeof nav === 'boolean' ? { prev: nav, next: nav } : nav
+  const currentItem = flatDirectories[currentIndex]
+  flatDirectories = flatDirectories.filter(x => !x?.href)
+  currentIndex = flatDirectories.findIndex(x => x === currentItem)
   let prev = navigation.prev && flatDirectories[currentIndex - 1]
   let next = navigation.next && flatDirectories[currentIndex + 1]
 
