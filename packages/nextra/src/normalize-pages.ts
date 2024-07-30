@@ -96,6 +96,7 @@ export type Item = (MdxFile | FolderWithoutChildren) & {
   withIndexPage?: boolean
   theme?: PageTheme
   isUnderCurrentDocsTree?: boolean
+  href?: string
 }
 
 export type PageItem = (MdxFile | FolderWithoutChildren) & {
